@@ -1,1 +1,68 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+
+@import "./app/scss/abstracts/variables";
+@import "./app/scss/abstracts/mixins";
+@import "./app/scss/abstracts/functions";
+
+@import "./app/scss/base/base";
+@import "./app/scss/base/animations";
+@import "./app/scss/base/typography";
+@import "./app/scss/base/utilities";
+
+
+@import "./app/scss/layaout/header";
+@import "./app/scss/layaout/grid";
+@import "./app/scss/layaout/footer";
+@import "./app/scss/layaout/navigation";
+
+
+@import "./app/scss/components/composition";
+@import "./app/scss/components/buttons";
+@import "./app/scss/components/feature-box";
+@import "./app/scss/components/card";
+@import "./app/scss/components/story";
+@import "./app/scss/components/bg-video";
+@import "./app/scss/components/form";
+@import "./app/scss/components/popup";
+
+
+*{
+    font-size:62.5%;
+    
+ 
+    @include respond(tab-land) {
+        font-size: 56.25%;
+    }
+
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%;
+    }
+}
+html{
+    
+}
+
+
+
+
+
+
+/*html, body { 
+    height: 100%; 
+}*/
+
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    padding: 3rem;
+    box-sizing: border-box;
+
+    @include respond(tab-port){
+        padding: 0;
+    }
+}

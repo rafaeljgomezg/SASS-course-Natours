@@ -1,0 +1,49 @@
+@import "../../scss/abstracts/variables";
+@import "../../scss/abstracts/mixins";
+
+.section-book {
+    padding: 15rem;
+    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark );
+
+    @include respond(tab-port){
+        width: 100%;
+        padding: 5rem;
+    }
+
+
+}
+
+.book {
+    /********* Solid color gradient technique ******/
+    background-image: linear-gradient(105deg, rgba($color-white,.9) 0%,rgba($color-white,.9) 50%, transparent 50%), url("../../../assets/img/nat-10.jpg"); 
+    background-size: cover;
+    /*****************************************************/
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black,.15);
+
+    //height: 50rem;
+
+    @include respond(tab-land){
+        background-image: linear-gradient(105deg, rgba($color-white,.9) 0%,rgba($color-white,.9) 65%, transparent 65%), url("../../../assets/img/nat-10.jpg"); 
+    }
+
+    @include respond(tab-port){
+        background-image: linear-gradient(to right, rgba($color-white,.9) 0%,rgba($color-white,.9) 100%, transparent 65%), url("../../../assets/img/nat-10.jpg"); 
+    }
+
+    &__form {
+        width: 60%;
+        padding: 6rem;
+
+        @include respond(tab-land){
+            width: 75%;
+
+        }
+        @include respond(tab-port){
+            width: 100%;
+
+        }
+
+    }
+
+}

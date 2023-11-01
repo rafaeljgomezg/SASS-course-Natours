@@ -1,0 +1,22 @@
+
+/* Always start RESSETING THE PAG */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+
+}
+
+/* Here is where we set the default value for fonts*/
+
+.superior {
+    font-size: 62.5%;
+
+  
+}
+
+.inferior {
+    box-sizing: border-box;
+}

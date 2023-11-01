@@ -1,0 +1,60 @@
+@mixin clearfix {
+    &::after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin center-hor-ver {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+//MEDIA QUERY MANAGER
+
+/* RANGES
+0 - 600px:      Phones
+600 - 900px:    Tablet Portrait
+900 - 1200px:   Tablet landscape
+*1200 - 1800px: is where our normal styles apply
+1800 + -    :   Big Desktop
+*/
+
+/*
+  THIS IS A WAY OF USING IT 
+
+@mixin respond-phone {
+    @media (max-width: 600px){@content}; // this way I pass some "content" to the mixin
+}
+*/
+
+/*  BREAKPOINT ARGUMENT CHOICES:
+- Phone
+- Tab-port ->Tablet Portrait
+- Tab-land -> Tablet Landscape
+- Big-desktop
+
+ORDER: Base + typography -> gebneral layout -> page layaout -> components
+
+1 em = 16px
+*/
+
+
+@mixin respond($breakpoint){
+    @if $breakpoint == phone {  //MIXINs Accept this clause
+        @media (max-width: 37.5em){@content}; // this way I pass some "content" to the mixin. Besides we set it with EMs instead of REMs->600px
+    }
+    @if $breakpoint == tab-port {  //MIXINs Accept this clause
+        @media (max-width: 56.25em){@content}; // -> 900px
+    }
+    @if $breakpoint == tab-land {  //MIXINs Accept this clause
+        @media (max-width: 75em){@content}; // -> 1200px
+    }
+    @if $breakpoint == big-desktop {  //MIXINs Accept this clause
+        @media (min-width: 112.5em){@content}; // -> 1800px
+    }
+}

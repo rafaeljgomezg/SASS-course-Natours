@@ -1,0 +1,39 @@
+<div class="section-book">
+   
+    <div class="row">
+        <div class="book">
+         
+            <div class="book__form">
+                <div class="u-margin-bottom-medium">
+                    <h2 class="heading-secondary">Start booking Now</h2>
+                </div>
+                <form [formGroup]="formGroup" class="form" (ngSubmit)="onSubmit()">
+                  
+                    <div class="form__group">
+                        <mat-form-field appearance="fill">
+                            <mat-label class="form__label">Fill-in your Full Name</mat-label>
+                            <input type="text" matInput placeholder="Full Name" class="form__input" formControlName="nombre" required>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="form__group">
+                        <mat-form-field appearance="fill">
+                            <mat-label class="form__label">Email address</mat-label>
+                            <input type="email" matInput placeholder="Email" class="form__input" formControlName="email" required>
+                        </mat-form-field>
+                    </div>
+
+                    <mat-radio-group aria-label="Select an option" formControlName="opcion">
+                        <mat-radio-button value="small" >SMALL TOUR GROUP</mat-radio-button>
+                        <mat-radio-button value="large" >LARGE TOUR GROUP</mat-radio-button>
+                    </mat-radio-group>    
+
+                    <button mat-raised-button type="submit" class="btn btn--green btn--animated" [disabled]="!formGroup.valid">Next Step &rarr;</button>
+
+                    
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

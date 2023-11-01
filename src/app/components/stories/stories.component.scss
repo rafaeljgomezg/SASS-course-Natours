@@ -1,0 +1,11 @@
+@import "../../scss/abstracts/variables";
+@import "../../scss/abstracts/mixins";
+
+.section-stories {
+    position: relative;
+    padding: 13rem;
+
+    @include respond(tab-port){
+        padding: 8rem 0 4rem 0;
+    }
+}
